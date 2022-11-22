@@ -6,26 +6,26 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:46:40 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/08 10:59:14 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:06:01 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-static int	check_duplicate(char **av)
+static int	check_duplicate(char **tab)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	if (!av)
+	i = 0;
+	if (!tab)
 		return (0);
-	while (av[i])
+	while (tab[i])
 	{
 		j = 1;
-		while (av[j])
+		while (tab[j])
 		{
-			if (j != i && ft_cmp_nbr(av[i], av[j]) == 0)
+			if (j != i && ft_cmp_nbr(tab[i], tab[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -87,11 +87,12 @@ char	**ft_remove_one(int ac, char **av)
 	tab = (char **)malloc(sizeof(char *) * ac);
 	if (!tab)
 		return (NULL);
-	while (i <= ac)
+	while (i < ac)
 	{
 		tab[i - 1] = av[i];
 		i++;
 	}
+	tab[i] = NULL;
 	return (tab);
 }
 
@@ -104,12 +105,15 @@ char	**ft_check_input(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	else if (ac > 2)
+	{
 		tab = ft_remove_one(ac, av);
+		if (argv_is_correct(tab) == 0)
+		{
+			free(tab);
+			return (NULL);
+		}
+	}
 	else
-		tab = ft_split(av[1], ' ');
-	if (!tab[0])
-		return (ft_free_tab(tab));
-	if (argv_is_correct(tab) == 0)
-		return (ft_free_tab(tab));
+		tab = fill_tab_with_two(av);
 	return (tab);
 }

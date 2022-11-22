@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:25:13 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/19 17:23:16 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:06:07 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char		**ft_split(char const *s, char c);
 
 char		**ft_free_tab(char **tab);
 int			ft_size_tab(char **tab);
+char		**fill_tab_with_two(char **av);
 
 /* Stack utils */
 

@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:03:45 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/19 17:33:58 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:38:13 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,5 @@ int	main(int ac, char **av)
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	if (ac > 2)
-		free(tab);
-	else
-		ft_free_tab(tab);
 	return (0);
 }

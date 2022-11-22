@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:08:18 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/19 15:59:12 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:46:52 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,27 @@ int	ft_check_if_int(const char *str)
 {
 	long	nb;
 	int		minus;
+	int		i;
 
 	minus = -1;
 	nb = 0;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == '-')
+		if (str[i] == '-')
 			minus *= -1;
-		str++;
+		i++;
 	}
-	while (*str >= 48 && *str <= 57)
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		nb = nb * 10 + *str - 48;
+		nb = nb * 10 + str[i] - 48;
 		if (nb * minus > 2147483647)
 			return (-1);
 		if (nb * minus < -2147483648)
 			return (0);
-		str++;
+		i++;
 	}
+	if (str[i] || (minus == 1 && i == 1) || i == 0)
+		return (0);
 	return (1);
 }

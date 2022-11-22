@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:57:37 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/19 17:26:44 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:05:57 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ char	**ft_free_tab(char **tab)
 		while (tab[i])
 		{
 			free(tab[i]);
-			tab[i] = NULL;
 			i++;
 		}
 		free (tab);
-		tab = NULL;
 	}
 	return (NULL);
 }
@@ -43,4 +41,22 @@ int	ft_size_tab(char **tab)
 	while (tab[i] != NULL)
 		i++;
 	return (i);
+}
+
+char	**fill_tab_with_two(char **av)
+{
+	char	**tab;
+
+	tab = ft_split(av[1], ' ');
+	if (!tab || !tab[0])
+		return (NULL);
+	if (argv_is_correct(tab) == 0)
+	{
+		if (tab[0])
+			ft_free_tab(tab);
+		else
+			free(tab);
+		return (NULL);
+	}
+	return (tab);
 }
