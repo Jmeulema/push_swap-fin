@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:57:37 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 17:05:57 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:14:23 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,25 @@ char	**fill_tab_with_two(char **av)
 			free(tab);
 		return (NULL);
 	}
+	return (tab);
+}
+
+char	**ft_remove_one(int ac, char **av)
+{
+	char	**tab;
+	int		i;
+
+	i = 1;
+	if (!av)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * ac);
+	if (!tab)
+		return (NULL);
+	while (i < ac)
+	{
+		tab[i - 1] = av[i];
+		i++;
+	}
+	tab[i] = NULL;
 	return (tab);
 }

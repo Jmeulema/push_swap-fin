@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:25:13 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 17:06:07 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:14:46 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char		**ft_split(char const *s, char c);
 char		**ft_free_tab(char **tab);
 int			ft_size_tab(char **tab);
 char		**fill_tab_with_two(char **av);
+char		**ft_remove_one(int ac, char **av);
 
 /* Stack utils */
 
@@ -65,7 +66,7 @@ int			ft_is_sign(char c);
 int			ft_is_nbr(char *str);
 int			ft_cmp_nbr(const char *s1, const char *s2);
 int			ft_check_if_int(const char *str);
-char		**ft_remove_one(int ac, char **av);
+
 char		**ft_check_input(int ac, char **av);
 
 /* Position */

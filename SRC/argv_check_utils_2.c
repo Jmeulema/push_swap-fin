@@ -6,26 +6,31 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:46:40 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 17:06:01 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:15:41 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-static int	check_duplicate(char **tab)
+static int	ft_nbcmp(char *nb1, char *nb2)
+{
+	return (ft_strtoi(nb1) == ft_strtoi(nb2));
+}
+
+static int	check_duplicate(char **av)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (!tab)
+	if (!av)
 		return (0);
-	while (tab[i])
+	while (av[i])
 	{
-		j = 1;
-		while (tab[j])
+		j = i + 1;
+		while (av[j])
 		{
-			if (j != i && ft_cmp_nbr(tab[i], tab[j]) == 0)
+			if (ft_nbcmp(av[i], av[j]))
 				return (1);
 			j++;
 		}
@@ -69,31 +74,11 @@ int	argv_is_correct(char **tab)
 			nb_zero += 1;
 		i++;
 	}
-	if (nb_zero > 1)
-		return (0);
 	if (check_duplicate(tab) == 1)
 		return (0);
+	if (nb_zero > 1)
+		return (0);
 	return (1);
-}
-
-char	**ft_remove_one(int ac, char **av)
-{
-	char	**tab;
-	int		i;
-
-	i = 1;
-	if (!av)
-		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * ac);
-	if (!tab)
-		return (NULL);
-	while (i < ac)
-	{
-		tab[i - 1] = av[i];
-		i++;
-	}
-	tab[i] = NULL;
-	return (tab);
 }
 
 char	**ft_check_input(int ac, char **av)
@@ -102,9 +87,7 @@ char	**ft_check_input(int ac, char **av)
 	int		i;
 
 	i = 0;
-	if (ac < 2)
-		return (0);
-	else if (ac > 2)
+	if (ac > 2)
 	{
 		tab = ft_remove_one(ac, av);
 		if (argv_is_correct(tab) == 0)

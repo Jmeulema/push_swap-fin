@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:03:45 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 16:38:13 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:56:20 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int	main(int ac, char **av)
 	int		stack_size;
 	char	**tab;
 
+	if (ac < 2)
+		return (0);
 	tab = ft_check_input(ac, av);
 	if (tab == NULL)
 		exit_error(NULL, NULL);
