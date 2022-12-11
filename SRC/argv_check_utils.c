@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:08:18 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 15:46:52 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/11 15:14:10 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,31 +42,6 @@ int	ft_is_nbr(char *str)
 	if (str[i] != '\0' && ft_is_digit(str[i]) == 0)
 		return (0);
 	return (1);
-}
-
-int	ft_cmp_nbr(const char *s1, const char *s2)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = i;
-	if (s1[i] == '+')
-	{
-		if (s2[j] != '+')
-			i++;
-	}
-	else
-	{
-		if (s2[j] == '+')
-			j++;
-	}
-	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
-	{
-		i++;
-		j++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }
 
 int	ft_check_if_int(const char *str)

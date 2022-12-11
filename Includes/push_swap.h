@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:25:13 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/25 12:14:46 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/11 14:34:28 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_stack
 
 // long int	ft_atoi(const char *str);
 int			ft_strtoi(const char *str);
-int			abs_nb(int nb);
 void		ft_putstr(char	*str);
 void		free_stack(t_stack **stack);
 void		exit_error(t_stack **stack_a, t_stack **stack_b);
@@ -76,6 +75,7 @@ void		get_target_position(t_stack **a, t_stack **b);
 
 /* Cost */
 
+int			abs_nb(int nb);
 void		get_cost(t_stack **stack_a, t_stack **stack_b);
 void		do_best_move(t_stack **stack_a, t_stack **stack_b);
 

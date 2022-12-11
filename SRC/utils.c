@@ -6,59 +6,35 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:57:37 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/22 15:52:00 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/11 14:34:39 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-// long int	ft_atoi(const char *str)
-// {
-// 	int			neg;
-// 	int			i;
-// 	long int	nb;
-
-// 	neg = 1;
-// 	i = 0;
-// 	nb = 0;
-// 	if (str[i] == '+')
-// 		i++;
-// 	else if (str[i] == '-')
-// 	{
-// 		neg *= -1;
-// 		i++;
-// 	}
-// 	while (str[i] >= '0' && str[i] <= '9')
-// 	{
-// 		nb = (nb * 10) + (str[i] + 48);
-// 		i++;
-// 	}
-// 	return (neg * nb);
-// }
-
 int	ft_strtoi(const char *str)
 {
 	long	nb;
-	int		minus;
+	int		sign;
 
-	minus = 1;
+	sign = 1;
 	nb = 0;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
-			minus *= -1;
+			sign *= -1;
 		str++;
 	}
 	while (*str >= 48 && *str <= 57)
 	{
 		nb = nb * 10 + *str - 48;
-		if (nb * minus > 2147483647)
+		if (nb * sign > 2147483647)
 			return (-1);
-		if (nb * minus < -2147483648)
+		if (nb * sign < -2147483648)
 			return (0);
 		str++;
 	}
-	return (nb * minus);
+	return (nb * sign);
 }
 
 void	ft_putstr(char	*str)
@@ -74,13 +50,6 @@ void	ft_putstr(char	*str)
 }
 
 /* get the postive number */
-
-int	abs_nb(int nb)
-{
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
-}
 
 void	free_stack(t_stack **stack)
 {

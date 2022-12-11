@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:36:04 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/09/22 14:04:11 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/11 16:38:36 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 /* cost_b represents the cost to get the element in B to the top of B */
 /* cost_a represents the cost to get the element in the right position in A */
 /* the sign depend, if it's in the top half (+) and in the bottom half (-) */
+
+int	abs_nb(int nb)
+{
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
+}
 
 void	get_cost(t_stack **stack_a, t_stack **stack_b)
 {
