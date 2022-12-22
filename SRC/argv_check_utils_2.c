@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:46:40 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/25 12:21:55 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:04:28 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,7 @@ int	argv_is_correct(char **tab)
 char	**ft_check_input(int ac, char **av)
 {
 	char	**tab;
-	int		i;
 
-	i = 0;
 	if (ac > 2)
 	{
 		tab = ft_remove_one(ac, av);
