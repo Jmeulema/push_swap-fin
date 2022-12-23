@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:03:45 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/23 11:56:20 by jmeulema         ###   ########.fr       */
+/*   Updated: 2022/12/23 11:59:52 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,15 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		sort(stack_a, stack_b);
 }
 
+// static void	ft_print_stack(t_stack *stack_a)
+// {
+// 	while (stack_a)
+// 	{
+// 		printf("%d ", stack_a->value);
+// 		stack_a = stack_a->next;
+// 	}
+// }
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -106,6 +115,7 @@ int	main(int ac, char **av)
 	stack_size = get_stack_size(stack_a);
 	set_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	// ft_print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
