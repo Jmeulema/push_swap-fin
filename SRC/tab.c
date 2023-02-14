@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:57:37 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/11/25 12:14:23 by jmeulema         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:57:24 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ char	**ft_remove_one(int ac, char **av)
 		tab[i - 1] = av[i];
 		i++;
 	}
-	tab[i] = NULL;
+	tab[i - 1] = NULL;
 	return (tab);
 }

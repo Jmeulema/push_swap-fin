@@ -6,7 +6,7 @@
 /*   By: jmeulema <jmeulema@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:03:45 by jmeulema          #+#    #+#             */
-/*   Updated: 2022/12/23 11:59:52 by jmeulema         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:57:36 by jmeulema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	tab = ft_check_input(ac, av);
-	if (tab == NULL)
-		exit_error(NULL, NULL);
+	// if (tab == NULL)
+	// 	exit_error(NULL, NULL);
 	stack_b = NULL;
 	stack_a = fill_stack_a(ft_size_tab(tab), tab);
 	stack_size = get_stack_size(stack_a);
@@ -118,5 +118,6 @@ int	main(int ac, char **av)
 	// ft_print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	// system ("leaks push_swap");
 	return (0);
 }
